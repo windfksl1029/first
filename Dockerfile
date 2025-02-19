@@ -5,7 +5,7 @@ FROM jboss/wildfly:latest
 WORKDIR /opt/jboss/wildfly/standalone/
 
 # 수정된 standalone.conf 복사
-COPY standalone.conf /opt/jboss/wildfly/bin/standalone.conf
+#COPY standalone.conf /opt/jboss/wildfly/bin/standalone.conf
 
 # 수정된 standalone.xml 복사
 COPY standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
