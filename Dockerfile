@@ -5,12 +5,9 @@ FROM jboss/wildfly:latest
 WORKDIR /opt/jboss/wildfly/standalone/
 
 
-COPY exem.tar /tmp/exem.tar
-# /agent 디렉토리를 만들고, 그 안에 압축을 푼 뒤, 불필요한 원본 tar 파일은 삭제합니다.
-# 하나의 RUN 명령어로 처리하여 이미지 용량이 커지는 것을 방지합니다.
-RUN mkdir /agent && \
-    tar -xf /tmp/exem.tar -C /agent && \
-    rm /tmp/exem.tar
+COPY exem.tar /tmp
+RUN mkdir /agent
+RUN tar -zxvf /tmp/exem.tar -C /agent
 
 # 2. 에이전트 실행을 위한 JAVA_OPTS 환경 변수 설정
 # JBoss WildFly 이미지는 JAVA_OPTS 환경 변수에 있는 값을 자동으로 Java 실행 옵션으로 사용합니다.
