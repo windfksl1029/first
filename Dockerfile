@@ -7,7 +7,7 @@ WORKDIR /opt/jboss/wildfly/standalone/
 
 RUN mkdir /opt/jboss/wildfly/standalone/agent
 COPY exem.tar /opt/jboss/wildfly/standalone/agent
-RUN tar -xvf /tmp/exem.tar -C /opt/jboss/wildfly/standalone/agent
+RUN tar -xvf /opt/jboss/wildfly/standalone/agent/exem.tar 
 
 # 2. 에이전트 실행을 위한 JAVA_OPTS 환경 변수 설정
 # JBoss WildFly 이미지는 JAVA_OPTS 환경 변수에 있는 값을 자동으로 Java 실행 옵션으로 사용합니다.
