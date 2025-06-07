@@ -11,8 +11,8 @@ RUN tar -xvf /opt/jboss/wildfly/standalone/agent/exem.tar -C /opt/jboss/wildfly/
 
 # 2. 에이전트 실행을 위한 JAVA_OPTS 환경 변수 설정
 # JBoss WildFly 이미지는 JAVA_OPTS 환경 변수에 있는 값을 자동으로 Java 실행 옵션으로 사용합니다.
-ENV JAVA_OPTS="-javaagent:/opt/jboss/wildfly/standalone/agent/exem/java/lib/exem-java-agent.jar -Dexem.agent.name=phisserver-test"
-
+#ENV JAVA_OPTS="-javaagent:/opt/jboss/wildfly/standalone/agent/exem/java/lib/exem-java-agent.jar -Dexem.agent.name=phisserver-test"
+ENV JAVA_OPTS="-Djava.util.logging.manager=org.jboss.logmanager.LogManager -javaagent:/opt/jboss/wildfly/standalone/agent/exem/java/lib/exem-java-agent.jar -Dexem.agent.name=phisserver-test"
 # 수정된 standalone.xml 복사
 COPY standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
 # 수정된 standalone.conf 복사
