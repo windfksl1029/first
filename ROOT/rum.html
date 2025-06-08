@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomcat RUM 테스트 페이지</title>
+<script>
+    const rumScript = document.createElement('script');
+    rumScript.async = 1;
+    rumScript.src = "https://10.10.52.76:8443/helper";
+    rumScript.type = "text/javascript";
+
+    rumScript.onload = function() {
+        ONE_RUM.init({
+            sendUrl: "https://10.10.52.76:8443/collect",
+            applicationId: "8aa3a620-8ae9-45c4-b747-522bf553fa11",
+            sessionSamplingRate:  100,
+            sessionReplaySamplingRate: 100,
+            sessionReplaySamplingOption: "maskInput",
+            sessionRecordingCount: 5000,
+        });
+    };
+
+    document.head.appendChild(rumScript);
+</script>
     
     </head>
 <body>
