@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomcat RUM 테스트 페이지</title>
+    
+    </head>
+<body>
+
+    <h1>🚀 Tomcat RUM 모니터링 테스트</h1>
+    <p>이 페이지는 Kubernetes(k8s) 위에서 실행되는 Tomcat 서버를 통해 제공되고 있습니다.</p>
+    <p>페이지가 로드되고 아래 버튼을 클릭하면, 관련 사용자 경험 데이터가 RUM 대시보드로 전송되어야 합니다.</p>
+
+    <hr>
+
+    <h2>이미지 로딩 테스트</h2>
+    <p>LCP(Largest Contentful Paint)와 같은 리소스 로딩 성능을 측정하기 위한 샘플 이미지입니다.</p>
+    <img src="https://placehold.co/600x300" alt="테스트 이미지" style="max-width: 100%; height: auto;">
+
+    <hr>
+
+    <h2>사용자 상호작용 테스트</h2>
+    <p>아래 버튼을 클릭하여 사용자 액션이 제대로 추적되는지 확인하세요.</p>
+    <button onclick="alert('버튼 클릭 이벤트가 발생했습니다! RUM 대시보드에서 확인해보세요.');">테스트 이벤트 발생시키기</button>
+
+</body>
+</html>
